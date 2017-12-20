@@ -45,6 +45,7 @@ class Services extends CI_Controller {
 
                     $service['server'] = $server['name'];
                     $service['commands'] = explode(';', $service['commands']);
+                    $service['execute_online'] = $service['execute_online'];
 
                     array_push($bodyData['services'], $service);
 
@@ -84,6 +85,7 @@ class Services extends CI_Controller {
             $data['sms_number'] = (($this->input->post('serviceSmsNumber') == null) || ($this->input->post('serviceSmsNumber') == "") ? null : $this->input->post('serviceSmsNumber'));
             $data['paypal_cost'] = (($this->input->post('servicePaypalCost') == null) || ($this->input->post('servicePaypalCost') == "") ? null : $this->input->post('servicePaypalCost'));
             $data['commands'] = $this->input->post('serviceCommands');
+            $data['execute_online'] = $this->input->post('serviceExecuteOnline') == null ? false : (bool)$this->input->post('serviceExecuteOnline');
 
             if ($this->config->item('sms_operator') == "MicroSMS") {
                 $data['sms_channel'] = (($this->input->post('serviceSmsChannel') == null) || ($this->input->post('serviceSmsChannel') == "") ? null : $this->input->post('serviceSmsChannel'));

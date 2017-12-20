@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed!');
 
 use xPaw\MinecraftPing;
 use xPaw\MinecraftPingException;
+require_once(APPPATH.'libraries/SourceQuery/bootstrap.php');
+use xPaw\SourceQuery\SourceQuery;
 
 /**
  * Created with ♥ by Verlikylos on 13.08.2017 22:50.
@@ -115,6 +117,26 @@ class Checkout extends CI_Controller {
              if (!$allow) {
                  redirect(base_url('shop/' . $serverName));
              }
+			 
+		   if ($service['execute_online']) {				
+				$Rcon = new SourceQuery();
+				try {
+					$Rcon->Connect($server['ip'], $server['rcon_port'], 1, SourceQuery::SOURCE);
+					$Rcon->SetRconPassword($server['rcon_pass']);
+
+					$listResponse = $Rcon->Rcon('list');
+					$players = array_flip(preg_split("/(\,\ )/", trim(explode(":", $listResponse)[1]), -1, PREG_SPLIT_NO_EMPTY));
+					if (!isset($players[$userName])) {
+						$_SESSION['messageDanger'] = "Musisz być <strong>ONLINE</strong> na serwerze, aby zrealizować ten voucher!";
+						redirect(base_url('voucher'));
+					}
+				} catch( Exception $e ) {
+					$_SESSION['messageDanger'] = "Wystąpił błąd podczas łączenia się z serwerem. Zachowaj kod SMS i zgłoś się do Administratora!";
+					redirect(base_url('voucher'));
+				} finally {
+					$Rcon->Disconnect();
+				}
+		   }
 
              $this->load->helper('smsnumbers_helper');
 

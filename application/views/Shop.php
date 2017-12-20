@@ -109,16 +109,18 @@
                         </button>
                         <h4 class="modal-title"><?php echo $service['name']; ?></h4>
                     </div>
-                    <div class="modal-body">
-                        <div class="alert alert-warning">
-                            <div class="container-fluid">
-                                <div class="alert-icon">
-                                    <i class="material-icons">warning</i>
-                                </div>
-                                Pamiętaj, aby być <strong>ONLINE</strong> na serwerze przy zakupie usługi! (Nie dotyczy unbanów, wejściówek, itd.)
-                                Podczas zakupu przedmiotu zwolnij miejsce w ekwipunku!
-                            </div>
-                        </div>
+                    <div class="modal-body">						
+						<?php if ($service['execute_online']): ?>
+							<div class="alert alert-warning">
+								<div class="container-fluid">
+									<div class="alert-icon">
+										<i class="material-icons">warning</i>
+									</div>
+									Pamiętaj, aby być <strong>ONLINE</strong> na serwerze podczas kupowania <strong>tej</strong> usługi!
+									Przed zakupem przedmiotu zwolnij miejsce w ekwipunku!
+								</div>
+							</div>
+						<?php endif; ?>						
                         <div class="card card-nav-tabs">
                             <div class="header header-primary">
                                 <div class="nav-tabs-navigation">

@@ -29,6 +29,7 @@
                                                 <th class="text-center">Numer SMS</th>
                                                 <th class="text-center">Koszt PayPal</th>
                                                 <th class="text-center">Opis, obrazek oraz komendy</th>
+                                                <th class="text-center">Gracz Online</th>
                                                 <th class="text-center"></th>
                                             </thead>
                                             <tbody>
@@ -44,6 +45,7 @@
                                                     <td><?php echo ($service['sms_number'] == null) ? "Brak" : $service['sms_number'] . " - " . getPriceNetto($service['sms_number'], $smsOperator) . "zł (" . getPriceBrutto($service['sms_number'], $smsOperator) . "zł z VAT)"; ?></td>
                                                     <td><?php echo ($service['paypal_cost'] == null) ? "Brak" : number_format(round($service['paypal_cost'], 2), 2, ',', ' ') . "zł"; ?></td>
                                                     <td><button class="btn btn-xs btn-info" style="margin: 0;" data-toggle="modal" data-target="#service<?php echo $service['id']; ?>"><i class="fa fa-search" aria-hidden="true"></i> Podgląd</button></td>
+                                                    <td><?php echo ($service['execute_online'] == null) ? "Błąd" : (bool)$service['execute_online'] ? '<i class="fa fa-check" aria-hidden="true"></i>' : '<i class="fa fa-times" aria-hidden="true"></i>'; ?></td>
                                                     <td class="td-actions">
 
                                                         <?php echo form_open(base_url('panel/services/edit')); ?>
@@ -186,6 +188,12 @@
                                                     <textarea name="serviceCommands" class="form-control" required></textarea>
                                                     <span class="material-input"></span>
                                                 </div>
+												<div class="checkbox">
+													<label class="checkbox-inline">Gracz Online
+														<input name="serviceExecuteOnline" type="checkbox" value="on" checked>
+													</label>
+                                                    <span class="material-input"></span>
+												</div>
                                                 <br />
                                                 <button class="btn btn-success text-center"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;&nbsp;Dodaj usługę</button>
                                                 <br />
@@ -203,6 +211,7 @@
                                             <p><strong>Obrazek usługi</strong> - Maksymalna waga to 10MB. Maksymalne wymiary 360x360 pikseli.</p>
                                             <p><strong>Koszt PayPal</strong> - Cena usługi przy płatności PayPal. <strong>Płatność PayPal nie jest jeszcze obsługiwana przez sklep.</strong> (Jeżeli nie chcesz korzystać z płatności PayPal dla tej usługi pozostaw to pole puste)</p>
                                             <p><strong>Komendy</strong> - Komendy, które zostaną wysłane na serwer po dokonaniu płatności przez użytkownika. Zamiast nicku gracza użyj "{PLAYER}" (bez cudzysłowi). Komendy oddzielaj średnikiem bez znaków nowej lini.</p>
+											<p><strong>Gracz Online</strong> - Zaznacz, aby wykonanie powyższych komend mogło odbyć się jedynie jeśli gracz jest online.</p> 
                                             <br /><br />
                                             <?php if ($smsOperator == "LvlUp"): ?>
                                                 <p><strong>Numer SMS</strong> - Wybierz numer SMS jednocześnie określający koszt jego wysłania. (Jeżeli nie chcesz korzystać z płatności SMS Premium dla tej usługi pozostaw wartość domyślną)</p>

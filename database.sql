@@ -113,7 +113,8 @@ CREATE TABLE `vmcs_services` (
   `sms_channel_id` int(11) DEFAULT NULL,
   `sms_number` int(11) DEFAULT NULL,
   `paypal_cost` int(11) DEFAULT NULL,
-  `commands` text NOT NULL
+  `commands` text NOT NULL,
+  `execute_online` TINYINT(1) NOT NULL DEFAULT '1' 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
