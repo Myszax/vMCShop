@@ -136,7 +136,7 @@
                                         <div class="form-group label-floating text-left">
                                             <label class="control-label">Ikona</label>
                                             <input type="text" name="pageIcon" class="form-control" aria-describedby="iconHelp">
-                                            <small id="iconHelp" class="form-text text-muted">Tutaj mozesz wpisać klasę ikony FontAwesome. Będzie się ona wyświetlać obok tytułu strony w nawigacji oraz na samej stronie. Przykład: "fa-adress-book". Listę dostępnych ikon możesz znaleźć <a href="http://fontawesome.io/icons/" class="link-reverse">tutaj</a>. Ikona nie jest wymagana.</small>
+                                            <small id="iconHelp" class="form-text text-muted">Tutaj możesz wpisać klasę ikony FontAwesome. Będzie się ona wyświetlać obok tytułu strony w nawigacji oraz na samej stronie. Przykład: "fa-adress-book". Listę dostępnych ikon możesz znaleźć <a href="http://fontawesome.io/icons/" class="link-reverse">tutaj</a>. Ikona nie jest wymagana.</small>
                                         </div>
                                         <br />
                                         <div class="form-group text-left">

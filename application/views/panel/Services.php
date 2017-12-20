@@ -207,10 +207,10 @@
                                         <div class="col-lg-6 col-md-12 col-xs-12">
                                             <h6 class="text-center" style="text-transform: none;">Aktualnie płatności SMS obsługuje: <strong><?php echo $smsOperator; ?></strong></h6>
                                             <h6 style="text-transform: none; font-weight: bold;">Informacja:</h6>
-                                            <p><strong>Serwer</strong> - Wybierz serwer, na ktorym ma zostać zrealizowana usługa po pomyślnym dokonaniu płatności.</p>
+                                            <p><strong>Serwer</strong> - Wybierz serwer, na którym ma zostać zrealizowana usługa po pomyślnym dokonaniu płatności.</p>
                                             <p><strong>Obrazek usługi</strong> - Maksymalna waga to 10MB. Maksymalne wymiary 360x360 pikseli.</p>
                                             <p><strong>Koszt PayPal</strong> - Cena usługi przy płatności PayPal. <strong>Płatność PayPal nie jest jeszcze obsługiwana przez sklep.</strong> (Jeżeli nie chcesz korzystać z płatności PayPal dla tej usługi pozostaw to pole puste)</p>
-                                            <p><strong>Komendy</strong> - Komendy, które zostaną wysłane na serwer po dokonaniu płatności przez użytkownika. Zamiast nicku gracza użyj "{PLAYER}" (bez cudzysłowi). Komendy oddzielaj średnikiem bez znaków nowej lini.</p>
+                                            <p><strong>Komendy</strong> - Komendy, które zostaną wysłane na serwer po dokonaniu płatności przez użytkownika. Zamiast nicku gracza użyj "{PLAYER}" (bez cudzysłowów). Komendy oddzielaj średnikiem bez znaków nowej linii.</p>
 											<p><strong>Gracz Online</strong> - Zaznacz, aby wykonanie powyższych komend mogło odbyć się jedynie jeśli gracz jest online.</p> 
                                             <br /><br />
                                             <?php if ($smsOperator == "LvlUp"): ?>

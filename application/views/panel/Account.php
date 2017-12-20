@@ -56,7 +56,7 @@
                                         <div class="card">
                                             <div class="card-header" data-background-color="primary">
                                                 <h4 class="card-title">
-                                                    <i class="fa fa-user" aria-hidden="true"></i> Zmiań avatar
+                                                    <i class="fa fa-user" aria-hidden="true"></i> Zmień avatar
                                                 </h4>
                                             </div>
                                             <div class="card-content">

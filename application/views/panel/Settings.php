@@ -148,7 +148,7 @@
                                             </div>
 
                                             <div class="col-md-6 col-xs-12">
-                                                Mniejszy tekst wyświetlany w nałówku strony. Można całkowicie z niego zrezygnować pozostawiając to pole puste.
+                                                Mniejszy tekst wyświetlany w nagłówku strony. Można całkowicie z niego zrezygnować pozostawiając to pole puste.
                                             </div>
 
                                         </div>
